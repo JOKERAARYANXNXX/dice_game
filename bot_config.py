@@ -1,7 +1,11 @@
 # bot_config.py
+from dotenv import load_dotenv
 import os
 
-TELEGRAM_BOT_TOKEN = os.getenv('TELEGRAM_BOT_TOKEN', 'YOUR_TELEGRAM_BOT_TOKEN')
+# Load environment variables from .env file
+load_dotenv()
+
+TELEGRAM_BOT_TOKEN = os.getenv('TELEGRAM_BOT_TOKEN')
 RAILWAY_RUN_AS_ROOT = os.getenv('RAILWAY_RUN_AS_ROOT', 'true')
 RAILWAY_RUN_UID = int(os.getenv('RAILWAY_RUN_UID', 0))
 REDIS_HOST = os.getenv('REDISHOST', 'monorail.proxy.rlwy.net')
